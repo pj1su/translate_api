@@ -2,12 +2,14 @@ import requests , json, itertools
 from django.shortcuts import render
 from django.views.generic import TemplateView
 from django.http import JsonResponse
+from django.views.decorators.csrf import csrf_exempt
 
 class TranslateView(TemplateView):
     
     template_name = "test.html"
     
-    
+
+@csrf_exempt
 def trans(request):
     try:
         data = json.loads(request.body)
@@ -35,4 +37,5 @@ def trans(request):
         print(text)
         return JsonResponse({"output":text},status=200)
     except Exception as e:
+        print(e)
         return JsonResponse({"messge":str(e)},status=500)

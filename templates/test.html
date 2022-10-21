@@ -29,20 +29,16 @@
 <script>
     axios.defaults.xsrfCookieName = 'csrftoken'
     axios.defaults.xsrfHeaderName = "X-CSRFTOKEN"
-    let data = new FormData();
-     //{
-        //input : '',
-        //source_lang : '',
-    //}
+    let data = {
+        input : '',
+        source_lang : '',
+    }
     const source_lang = document.getElementById('source_lang')
     const target_lang = document.getElementById('target_lang')
     function api_test(event) {
         document.all.click.value ="클릭함"
-        data.append("input", document.all.word.value)
-        data.append("source_lang", source_lang.innerText)
-        data.append("csrfmiddlewaretoken", '{{csrf_token}}')
-        //data.input = document.all.word.value
-        //data.source_lang = source_lang.innerText
+        data.input = document.all.word.value
+        data.source_lang = source_lang.innerText
         axios.post(`${origin}/api`,data).then((res)=> {
             document.all.output.value = res.data.output
         }).catch((err) => {
