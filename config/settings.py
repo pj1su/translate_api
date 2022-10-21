@@ -126,8 +126,7 @@ USE_TZ = False
 STATIC_URL = '/static/'
 
 if not DEBUG:
-    STATIC_ROOT = BASE_DIR / "static"
-    STATICFILES_STORAGE = BASE_DIR / "static"
+    STATICFILES_DIRS = ["/home/ubuntu/translate_api/static",]
 else:
     STATICFILES_DIRS = [BASE_DIR / "static"]
     
