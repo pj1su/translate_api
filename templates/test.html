@@ -43,6 +43,7 @@
             document.all.output.value = res.data.output
         }).catch((err) => {
             console.log("err")
+            document.all.click.value = `${err} 에러`
         })
     }
     function reverse() {
