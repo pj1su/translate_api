@@ -19,6 +19,7 @@
     </div>
 </div>
 <button onclick="api_test(event)">통신</button>
+<input type="text" name="click">
 
 {% endblock content %}
 
@@ -35,6 +36,7 @@
     const source_lang = document.getElementById('source_lang')
     const target_lang = document.getElementById('target_lang')
     function api_test(event) {
+        document.all.click.value ="클릭함"
         data.input = document.all.word.value
         data.source_lang = source_lang.innerText
         axios.post(`${origin}/api`,data).then((res)=> {
