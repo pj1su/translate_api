@@ -1,0 +1,13 @@
+{% load static i18n %}
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    {% block static %}
+    <link rel="stylesheet" href="{% static 'assets/main.css' %}" type="text/css" />
+    {% endblock static %}
+  </head>
+  <body>
+    {% block content %} {% endblock content %}
+    {% block js %}{% endblock js %}
+  </body>
+</html>

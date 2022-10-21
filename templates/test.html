@@ -1,0 +1,56 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+변역
+
+<div class="a">
+    <div class="b">
+        <div id="source_lang">한국어</div>
+        <button onclick="reverse()">바꾸기</button>
+        <div id="target_lang">영어</div>
+    </div>
+    <div class="c">
+        <textarea maxlength="5000" name="word" type="search" class="c_a"></textarea>
+        <textarea  name="output" type="search" class="c_b"></textarea>
+    </div>
+</div>
+<button onclick="api_test(event)">통신</button>
+
+{% endblock content %}
+
+
+{% block js %}
+<script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.1/axios.min.js"></script>
+<script>
+    axios.defaults.xsrfCookieName = 'csrftoken'
+    axios.defaults.xsrfHeaderName = "X-CSRFTOKEN"
+    let data = {
+        input : '',
+        source_lang : '',
+    }
+    const source_lang = document.getElementById('source_lang')
+    const target_lang = document.getElementById('target_lang')
+    document.all.word.oninput = function(e) {
+        document.all.word.value = e.target.value
+        data.input = e.target.value
+    }
+    function api_test(event) {
+        data.source_lang = source_lang.innerText
+        axios.post(`${origin}/api`,data).then((res)=> {
+            document.all.output.value = res.data.output
+        }).catch((err) => {
+            console.log("err")
+        })
+    }
+    function reverse() {
+        if (source_lang.innerText === '한국어') {
+            source_lang.innerText = '영어'
+            target_lang.innerText = '한국어'
+        } else {
+            source_lang.innerText = '한국어'
+            target_lang.innerText = '영어'
+        }
+    }
+</script>
+{% endblock js %}
