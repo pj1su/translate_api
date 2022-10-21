@@ -11,7 +11,9 @@ https://docs.djangoproject.com/en/3.2/ref/settings/
 """
 
 from pathlib import Path
-import my_settings
+import my_settings, os
+from django.contrib.staticfiles.storage import staticfiles_storage
+from django.contrib.staticfiles.finders import FileSystemFinder, AppDirectoriesFinder
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -125,6 +127,7 @@ STATIC_URL = '/static/'
 
 if not DEBUG:
     STATIC_ROOT = BASE_DIR / "static"
+    STATICFILES_STORAGE = BASE_DIR / "static"
 else:
     STATICFILES_DIRS = [BASE_DIR / "static"]
     
