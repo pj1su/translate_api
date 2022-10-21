@@ -34,11 +34,8 @@
     }
     const source_lang = document.getElementById('source_lang')
     const target_lang = document.getElementById('target_lang')
-    document.all.word.oninput = function(e) {
-        document.all.word.value = e.target.value
-        data.input = e.target.value
-    }
     function api_test(event) {
+        data.input = document.all.word.value
         data.source_lang = source_lang.innerText
         axios.post(`${origin}/api`,data).then((res)=> {
             document.all.output.value = res.data.output
