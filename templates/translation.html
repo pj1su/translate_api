@@ -62,11 +62,9 @@
 					</div>
 
 					<div class="btn_wrap float">
-						<!--
 						<div class="fl">
-							<a href="">문서</a>
+							<a id="before_copy">복사하기</a>
 						</div>
-						-->
 						<div class="fr">
 							<button onclick="api(event)">번역하기</button>
 						</div>
@@ -81,13 +79,11 @@
 
 					<div id="output" class="after">
 					</div>
-					<!--
 					<div class="btn_wrap float">
 						<div class="fl">
-							<a href="">문서</a>
+							<a id='after_copy'>복사하기</a>
 						</div>
 					</div>
-					-->
 				</div>
 			</section>
 
@@ -164,7 +160,20 @@
 		source_lang.value = target_lang.value
 		target_lang.value = storage
     }
-	
+	const before_copy = document.getElementById('before_copy')
+	const after_copy = document.getElementById('after_copy')
+	before_copy.addEventListener('click', () => {
+		navigator.clipboard.writeText(document.all.word.value).then((res) => {
+			window.alert("클립보드에 복사되었습니다.")
+		})
+		//document.all.word.select()
+		//document.execCommand('copy')
+	})
+	after_copy.addEventListener('click', () => {
+		navigator.clipboard.writeText(output.innerText).then((res) => {
+			window.alert("클립보드에 복사되었습니다.")
+		})
+	})
 </script>
 <script type="text/javascript">
 	$(function(){

@@ -272,7 +272,7 @@
 }
 #translation_box .ty02 .after{    
 	overflow-y: clip;
-    height: 390px;
+    height: 300px;
     padding: 20px 20px;
     background: #fff;
     font-size:20px;
@@ -334,5 +334,5 @@
 	#translation_box .btn_wrap{padding:15px; height:auto;}
 	#translation_box .ty02 .change_result{height:auto; min-height:200px; padding:10px;}
 	#translation_box .change_btn{display:none;}
-	#translation_box .ty02 .after{height:200px;}
+	#translation_box .ty02 .after{height:150px;}
 }
