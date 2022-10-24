@@ -163,16 +163,27 @@
 	const before_copy = document.getElementById('before_copy')
 	const after_copy = document.getElementById('after_copy')
 	before_copy.addEventListener('click', () => {
-		navigator.clipboard.writeText(document.all.word.value).then((res) => {
-			window.alert("클립보드에 복사되었습니다.")
-		})
+		const dummy = document.createElement("textarea")
+		document.body.appendChild(dummy)
+		dummy.value = document.all.word.value
+		dummy.select()
+		document.execCommand('copy')
+		document.body.removeChild(dummy)
+		window.alert("복사되었습니다.")
+		//navigator.clipboard.writeText(document.all.word.value).then((res) => {
+		//	window.alert("클립보드에 복사되었습니다.")
+		//})
 		//document.all.word.select()
 		//document.execCommand('copy')
 	})
 	after_copy.addEventListener('click', () => {
-		navigator.clipboard.writeText(output.innerText).then((res) => {
-			window.alert("클립보드에 복사되었습니다.")
-		})
+		const dummy = document.createElement("textarea")
+		document.body.appendChild(dummy)
+		dummy.value = output.innerText
+		dummy.select()
+		document.execCommand('copy')
+		document.body.removeChild(dummy)
+		window.alert("복사되었습니다.")
 	})
 </script>
 <script type="text/javascript">
