@@ -1,0 +1,219 @@
+@charset "utf-8";
+
+@import url("reset.css");
+
+@font-face {
+    font-family: 'SeoulNamsanM';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_two@1.0/SeoulNamsanM.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+/** 공통 적용 **/
+* {
+    font-family: 'SeoulNamsanM';
+	font-weight:400;
+    letter-spacing: -0.5px;
+    line-height: 1.5;
+    box-sizing: border-box;
+    outline: none;
+    margin: 0;
+    padding: 0;
+}
+/** 생략 **/
+hr.skip{
+    position:absolute;
+    left:-99999px;
+}
+h2.skip{
+    text-indent:-99999px;
+    overflow:hidden;
+    position:absolute;
+    width:0;
+    height:0;
+    line-height:0;
+}
+/** 스킵 네비게이션 **/
+.skip_nav{
+    width:100%;
+    height:30px;
+    text-align:center;
+    position:absolute;
+    top:-50px;
+    background:#000;
+    z-index:50;
+}
+
+
+
+body{
+    font-size: 14px;
+    color: #000;
+
+}
+
+
+.mt10{margin-top:10px;}
+.mt20{margin-top:20px;}
+.mt30{margin-top:30px;}
+.mt40{margin-top:40px;}
+.mt50{margin-top:50px;}
+.mt60{margin-top:60px;}
+.mt70{margin-top:70px;}
+.mt80{margin-top:80px;}
+.mt90{margin-top:90px;}
+.mt100{margin-top:100px;}
+.mt110{margin-top:110px;}
+.mt120{margin-top:120px;}
+.mt130{margin-top:130px;}
+.mt140{margin-top:140px;}
+.mt150{margin-top:150px;}
+.mt160{margin-top:160px;}
+.mt170{margin-top:170px;}
+.mt180{margin-top:180px;}
+.mt190{margin-top:190px;}
+.mt200{margin-top:200px;}
+
+.fl{float:left;}
+.fr{float:right;}
+.float:after{content:""; display:block; float:none; clear:both;}
+
+select{font-size:14px; max-width:100%; width:100%;
+  background:#4395FF url('../img/translation03.svg') no-repeat; background-size:20px; background-position:center right 150px;
+  border:none; outline:none; box-sizing:border-box;}
+select {
+-webkit-appearance:none; /* for chrome */
+-moz-appearance:none; /*for firefox*/
+appearance:none;
+}
+
+#header{
+	width:100%;
+	position:fixed;
+	z-index:99999;
+	left:0; 
+	top:0;
+}
+#header.roll{
+	background:rgba(0,0,0,0.5);
+	background: linear-gradient(
+            to top,
+            rgba(0, 0, 0, 0) 10%,
+            rgba(0, 0, 0, 0.2) 25%,
+            rgba(0, 0, 0, 0.4) 50%,
+            rgba(0, 0, 0, 0.6) 75%,
+            rgba(0, 0, 0, 0.8) 100%
+          )
+}
+.header_wrap{
+	width:96%;
+	max-width:1300px;
+	margin:0 auto;
+	position:relative;
+	height:90px;
+}
+.logo{
+	position:absolute;
+	left:0;
+	top:50%;
+	transform:translateY(-50%);
+}
+.logo a{
+	display:block;
+	background:url('../img/logo.svg') no-repeat;
+	background-size:cover;
+	width:174px;
+	height:50px;
+	text-indent:-99999px;
+}
+
+
+#footer{
+	background:#222;
+	padding:50px 0 200px;
+}
+#footer .f_wrap{
+	max-width:800px;
+	width:92%;
+	margin:0 auto;
+	text-align:left;
+}
+#footer .f_wrap .f_logo a{
+	display:block;
+	background:url('../img/logo.svg') no-repeat;
+	background-size:cover;
+	width:122px;
+	height:35px;
+	text-indent:-99999px;
+}
+#footer .f_wrap .info{
+	margin-top:30px;
+}
+#footer .f_wrap .info > div{
+	color:#fff;
+	font-size:12px;
+}
+#footer .f_wrap .info div.div02{
+	margin-top:5px;
+}
+#footer .f_wrap .info > div span{
+	color:#fff;
+	font-size:12px;
+	display:inline-block;
+	margin-right:20px;
+}
+#footer .f_wrap .f_menu{
+	margin-top:30px;
+}
+#footer .f_wrap .f_menu ul li{
+	display:inline-block;
+	margin-right:20px;
+}
+#footer .f_wrap .f_menu ul li a{
+	color:#fff;
+	font-size:12px;
+}
+#footer .f_wrap .copy{
+	margin-top:30px;
+	color:#fff;
+	font-size:12px;
+}
+#footer .quick{
+	position:fixed;
+	left:0;
+	bottom:-280px;
+	width:100%;
+	padding:100px 0;
+	background:url('../img/f01.svg') no-repeat;
+	background-size:cover;
+	transition:all .3s;
+}
+#footer .quick.roll{
+	bottom:0;
+	transition:all .3s;
+}
+#footer .quick a{
+	display:block;
+	margin:0px auto 0;
+	width:350px;
+	height:80px;
+	line-height:80px;
+	font-size:30px;
+	color:#fff;
+	background:#0075E1;
+	text-align:center;
+	border-radius:8px;
+}
+
+@media only screen and (max-width: 1024px){
+	.header_wrap{height:70px;}
+	.logo{left:50%; transform:translate(-50%,-50%);}
+	.logo a{width:140px; height:35px;}
+
+	#footer{padding:20px 0 140px;}
+	#footer .f_wrap .fl{float:none; width:100%;}
+	#footer .f_wrap .fr{float:none; width:100%; margin-top:20px;}
+	#footer .f_wrap .info span{font-size:13px;}
+	
+	#footer .quick{padding:30px 0;}
+	#footer .quick a{height:50px; line-height:50px; margin:50px auto 0; font-size:18px; width:250px;}
+}

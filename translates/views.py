@@ -6,9 +6,12 @@ from django.views.decorators.csrf import csrf_exempt
 
 class TranslateView(TemplateView):
     
-    template_name = "test.html"
+    template_name = "home.html"
     
-
+class TranslateAPIView(TemplateView):
+    
+    template_name = "translation.html"
+    
 @csrf_exempt
 def trans(request):
     try:

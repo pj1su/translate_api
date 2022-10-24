@@ -1,0 +1,304 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+
+<!-- 스킵 네비게이션 -->
+<div class="skip_nav">
+	<a href="#">'#' 바로가기</a>
+	<a href="#">'#' 바로가기</a>
+	<a href="#">'#' 바로가기</a>
+</div>
+<!-- 스킵 네비게이션 -->
+
+<!-- 구분선 -->
+<hr class="skip">
+<!-- 구분선 -->
+
+<!-- WRAP -->
+<div id="wrap">
+
+	<!-- HEADER -->
+	<header id="header">
+		
+		<div class="header_wrap">
+
+			<!-- 로고 -->
+			<h1 class="logo">
+				<a href="{% url 'translate:home' %}">경이로움 (로고 및 홈으로 이동)</a>
+			</h1>
+			<!-- 로고 -->
+
+		</div>
+		
+	</header>
+	<!-- HEADER -->
+	
+	<!-- 구분선 -->
+	<hr class="skip">
+	<!-- 구분선 -->
+
+	<!-- MAIN -->
+	<main role="main" id="container">
+		<h2 class="skip">본문내용</h2>
+		<section class="content">
+			
+
+			<section id="section01">
+				<div class="inner">
+					<div class="txt">
+						<span>경이로움의 새로운 번역 서비스</span>
+						<div>
+							세상의 모든 책을 연결합니다. </br>책 만을 위한, <span>AI 기계번역</span> 솔루션입니다.
+						</div>
+						<a href="{% url 'translate:translate' %}">지금 무료 체험하기</a>
+					</div>
+				</div>
+			</section>
+			<section id="section02" class="section">
+				<div class="inner">
+					<div class="txt">
+						더 이상 고민되지 않은 가격으로 </br>1/10 가격이면 모든 번역이 가능합니다.
+					</div>
+					<div class="img">
+						<img src="{% static 'assets/img/s02_01.svg' %}">
+					</div>
+					<a href="{% url 'translate:translate' %}">지금 무료 체험하기</a>
+				</div>
+			</section>
+			<section id="section03" class="section">
+				<div class="inner">
+					<div class="txt">
+						시간을 절약하여 </br>더 많은 번역이 가능합니다.
+					</div>
+					<div class="img">
+						<img src="{% static 'assets/img/s03_01.svg' %}">
+					</div>
+					<a href="{% url 'translate:translate' %}">지금 무료 체험하기</a>
+				</div>
+			</section>
+			<section id="section04" class="section">
+				<div class="inner">
+					<div class="txt">
+						언제, 어디서든 </br>가장 <span>저렴한 비용</span>으로 가장 <span>빠르고 손 쉽게</span>
+					</div>
+					<div class="img">
+						<img src="{% static 'assets/img/s04_01.svg' %}">
+					</div>
+				</div>
+			</section>
+			<section id="section05" class="section">
+				<div class="inner">
+					<div class="txt">
+						지금 바로 번역 솔루션을 </br>가장 먼저 체험할 기회
+						<small>1회 한정 무료체험 가능</small>
+					</div>
+					<a href="{% url 'translate:translate' %}">지금 무료 체험하기</a>
+				</div>
+			</section>
+			<section id="section06">
+				<div class="inner">
+					<div class="txt">
+						실제 편집자의 </br>생생한 사용 후기
+					</div>
+					<ul>
+						<li>
+							<div class="subject">시간이 엄청 절약되요!! 너무 좋아요</div>
+							<div class="etc">
+								<span>양**</span><span><img src="{% static 'assets/img/s06_01.svg' %}"></span>
+							</div>
+							<div class="content">
+								솔직히 진짜 빨리 될까 싶었는데 진짜 엄청 빠르더라구요! 시간이 절약되니까 양도 늘릴 수 있고 너무 좋아요~
+							</div>
+						</li>
+						<li>
+							<div class="subject">시간이 엄청 절약되요!! 너무 좋아요</div>
+							<div class="etc">
+								<span>양**</span><span><img src="{% static 'assets/img/s06_01.svg' %}"></span>
+							</div>
+							<div class="content">
+								솔직히 진짜 빨리 될까 싶었는데 진짜 엄청 빠르더라구요! 시간이 절약되니까 양도 늘릴 수 있고 너무 좋아요~
+							</div>
+						</li>
+						<li>
+							<div class="subject">시간이 엄청 절약되요!! 너무 좋아요</div>
+							<div class="etc">
+								<span>양**</span><span><img src="{% static 'assets/img/s06_01.svg' %}"></span>
+							</div>
+							<div class="content">
+								솔직히 진짜 빨리 될까 싶었는데 진짜 엄청 빠르더라구요! 시간이 절약되니까 양도 늘릴 수 있고 너무 좋아요~
+							</div>
+						</li>
+						<li>
+							<div class="subject">시간이 엄청 절약되요!! 너무 좋아요</div>
+							<div class="etc">
+								<span>양**</span><span><img src="{% static 'assets/img/s06_01.svg' %}"></span>
+							</div>
+							<div class="content">
+								솔직히 진짜 빨리 될까 싶었는데 진짜 엄청 빠르더라구요! 시간이 절약되니까 양도 늘릴 수 있고 너무 좋아요~
+							</div>
+						</li>
+						<li>
+							<div class="subject">시간이 엄청 절약되요!! 너무 좋아요</div>
+							<div class="etc">
+								<span>양**</span><span><img src="{% static 'assets/img/s06_01.svg' %}"></span>
+							</div>
+							<div class="content">
+								솔직히 진짜 빨리 될까 싶었는데 진짜 엄청 빠르더라구요! 시간이 절약되니까 양도 늘릴 수 있고 너무 좋아요~
+							</div>
+						</li>
+						<li>
+							<div class="subject">시간이 엄청 절약되요!! 너무 좋아요</div>
+							<div class="etc">
+								<span>양**</span><span><img src="{% static 'assets/img/s06_01.svg' %}"></span>
+							</div>
+							<div class="content">
+								솔직히 진짜 빨리 될까 싶었는데 진짜 엄청 빠르더라구요! 시간이 절약되니까 양도 늘릴 수 있고 너무 좋아요~
+							</div>
+						</li>
+					</ul>
+				</div>
+			</section>
+			<section id="section07">
+				<div class="inner">
+					<div class="txt">
+						자주 묻는 질문
+					</div>
+				</div>
+				<div class="list">
+					<ul>
+						<li class="menu">
+							<a>
+								<div class="q">AI 기계번역이 정확히 뭔가요?</div>
+							</a>
+							<div style="">
+								사이다경제 홈페이지에서 시그널 메뉴를 선택하신 후....
+							</div>
+						</li>
+						<li class="menu">
+							<a>
+								<div class="q">AI 기계번역이 정확히 뭔가요?</div>
+							</a>
+							<div style="">
+								사이다경제 홈페이지에서 시그널 메뉴를 선택하신 후....
+							</div>
+						</li>
+						<li class="menu">
+							<a>
+								<div class="q">AI 기계번역이 정확히 뭔가요?</div>
+							</a>
+							<div style="">
+								사이다경제 홈페이지에서 시그널 메뉴를 선택하신 후....
+							</div>
+						</li>
+						<li class="menu">
+							<a>
+								<div class="q">AI 기계번역이 정확히 뭔가요?</div>
+							</a>
+							<div style="">
+								사이다경제 홈페이지에서 시그널 메뉴를 선택하신 후....
+							</div>
+						</li>
+					</ul>
+				</div>
+			</section>
+
+		</section>
+	</main>
+	<!-- MAIN -->
+	
+	<!-- 구분선 -->
+	<hr class="skip">
+	<!-- 구분선 -->
+	
+	<!-- FOOTER -->
+	<footer id="footer">
+		<div class="f_wrap float">
+
+			<div class="quick">
+				<a href="{% url 'translate:translate' %}">지금 무료 체험하기</a>
+			</div>
+			
+			<div class="f_logo">
+				<a href="{% url 'translate:home' %}">경이로움</a>
+			</div>
+
+
+			<div class="info float">
+				<div class="fl">
+					<div class="div01">(주) 사이다경제 Co., Ltd.</div>
+					<div class="div02"><span>대표번호 02-2088-5754</span><span>운영시간 11-19시</span></div>
+				</div>
+				<div class="fr">
+					<div class="div01"><span>대표 김의현</span><span>개인정보책임 김의현</span></div>
+					<div class="div02"><span>사업자등록번호 586-81-00920</span><span>통신판매업 제2018-서울강남-03824호</span></div>
+				</div>
+			</div>
+			<div class="f_menu">
+				<ul>
+					<li><a href="#">이용약관</a></li>
+					<li><a href="#">개인정보처리방침</a></li>
+				</ul>
+			</div>
+			<div class="copy">
+				2022 사이다경제 CO., LTD ALL Rights Reserved.
+			</div>
+		</div>
+	</footer>
+	<!-- FOOTER -->
+
+</div>
+<!-- WRAP -->
+{% endblock content %}
+{% block js %}
+<script src="{% static 'assets/js/jquery-1.11.0.min.js' %}"></script>
+<script type="text/javascript">
+	$(function(){
+	 var rollHeader = 100;
+	  $(window).scroll(function() {
+		var scroll = getCurrentScroll();
+		  if ( scroll >= rollHeader ) {
+			   $('#header').addClass('roll');
+			}
+			else {
+				$('#header').removeClass('roll');
+			}
+	  });
+	function getCurrentScroll() {
+		return window.pageYOffset || document.documentElement.scrollTop;
+		}
+	});
+</script>
+<script>
+	$(".menu > a").click(function() {
+		$(this).toggleClass('active').next('div').slideToggle(200);
+		$(this).parent('.menu').toggleClass('active02');
+		$(this).parent().siblings().children('div').slideUp(200);
+		$(this).parent().siblings().children('.active').removeClass('active');
+		$(this).parent('.active02').siblings().removeClass('active02');
+		return false;
+	});
+</script>
+<script type="text/javascript">
+
+var prevScrollTop = 0;
+
+var nowScrollTop = 0;
+
+function wheelDelta(){
+    return prevScrollTop - nowScrollTop > 0 ? 'up' : 'down';
+};
+
+$(window).on('scroll', function(){
+nowScrollTop = $(this).scrollTop();
+if(wheelDelta() == 'down'){
+	$('.quick').addClass('roll');
+}
+if(wheelDelta() == 'up'){
+	$('.quick').removeClass('roll');
+}
+prevScrollTop = nowScrollTop;
+});
+
+</script>
+{% endblock js %}

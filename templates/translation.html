@@ -1,0 +1,226 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+<style>
+#footer{padding:50px 0;}
+</style>
+
+<!-- 스킵 네비게이션 -->
+<div class="skip_nav">
+	<a href="#">'#' 바로가기</a>
+	<a href="#">'#' 바로가기</a>
+	<a href="#">'#' 바로가기</a>
+</div>
+<!-- 스킵 네비게이션 -->
+
+<!-- 구분선 -->
+<hr class="skip">
+<!-- 구분선 -->
+
+<!-- WRAP -->
+<div id="wrap">
+
+	<!-- HEADER -->
+	<header id="header">
+		
+		<div class="header_wrap">
+
+			<!-- 로고 -->
+			<h1 class="logo">
+				<a href="{% url 'translate:home' %}">경이로움 (로고 및 홈으로 이동)</a>
+			</h1>
+			<!-- 로고 -->
+
+		</div>
+		
+	</header>
+	<!-- HEADER -->
+	
+	<!-- 구분선 -->
+	<hr class="skip">
+	<!-- 구분선 -->
+
+	<!-- MAIN -->
+	<main role="main" id="container">
+		<h2 class="skip">본문내용</h2>
+		<section class="content translation">
+			
+
+			<section id="translation_box">
+				<div class="change_btn"><a onclick="reverse()">바꾸기</a></div>
+				<div class="ty01 fl">
+
+					<select name="source_lang" id="ty01" required="">
+						<option value="영어">영어</option>
+					  	<option value="한국어">한국어</option>
+					</select>
+
+					<div class="before">
+						<textarea placeholder="번역할 내용을 입력해주세요." name="word" maxlength="5000" id="textarea"></textarea>
+						<span id="counter">###</span>
+					</div>
+
+					<div class="btn_wrap float">
+						<!--
+						<div class="fl">
+							<a href="">문서</a>
+						</div>
+						-->
+						<div class="fr">
+							<button onclick="api(event)">번역하기</button>
+						</div>
+					</div>
+				</div>
+				<div class="ty02 fl">
+
+					<select name="target_lang" id="ty02" required="">
+					  <option value="한국어">한국어</option>
+					  <option value="영어">영어</option>
+					</select>
+
+					<div id="output" class="after">
+					</div>
+					<!--
+					<div class="btn_wrap float">
+						<div class="fl">
+							<a href="">문서</a>
+						</div>
+					</div>
+					-->
+				</div>
+			</section>
+
+		</section>
+	</main>
+	<!-- MAIN -->
+	
+	<!-- 구분선 -->
+	<hr class="skip">
+	<!-- 구분선 -->
+	
+	<!-- FOOTER -->
+	<footer id="footer">
+		<div class="f_wrap float">
+			
+			<div class="f_logo">
+				<a href="{% url 'translate:home' %}">경이로움</a>
+			</div>
+
+
+			<div class="info float">
+				<div class="fl">
+					<div class="div01">(주) 사이다경제 Co., Ltd.</div>
+					<div class="div02"><span>대표번호 02-2088-5754</span><span>운영시간 11-19시</span></div>
+				</div>
+				<div class="fr">
+					<div class="div01"><span>대표 김의현</span><span>개인정보책임 김의현</span></div>
+					<div class="div02"><span>사업자등록번호 586-81-00920</span><span>통신판매업 제2018-서울강남-03824호</span></div>
+				</div>
+			</div>
+			<div class="f_menu">
+				<ul>
+					<li><a href="#">이용약관</a></li>
+					<li><a href="#">개인정보처리방침</a></li>
+				</ul>
+			</div>
+			<div class="copy">
+				2022 사이다경제 CO., LTD ALL Rights Reserved.
+			</div>
+		</div>
+	</footer>
+	<!-- FOOTER -->
+
+</div>
+<!-- WRAP -->
+{% endblock content %}
+{% block js %}
+
+<script src="{% static 'assets/js/jquery-1.11.0.min.js' %}"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.1/axios.min.js"></script>
+<script>
+    axios.defaults.xsrfCookieName = 'csrftoken'
+    axios.defaults.xsrfHeaderName = "X-CSRFTOKEN"
+    let data = {
+        input : '',
+        source_lang : '',
+    }
+    //const source_lang = document.getElementById('source_lang')
+    //const target_lang = document.getElementById('target_lang')
+	const output = document.getElementById('output')
+	const source_lang = document.all.source_lang
+	const target_lang = document.all.target_lang
+    function api(event) {
+        data.input = document.all.word.value
+        data.source_lang = source_lang.value
+        axios.post(`${origin}/api`,data).then((res)=> {
+            output.innerText = res.data.output
+        }).catch((err) => {
+            console.log("err")
+        })
+    }
+    function reverse() {
+        let storage = source_lang.value
+		source_lang.value = target_lang.value
+		target_lang.value = storage
+    }
+	
+</script>
+<script type="text/javascript">
+	$(function(){
+	 var rollHeader = 100;
+	  $(window).scroll(function() {
+		var scroll = getCurrentScroll();
+		  if ( scroll >= rollHeader ) {
+			   $('#header').addClass('roll');
+			}
+			else {
+				$('#header').removeClass('roll');
+			}
+	  });
+	function getCurrentScroll() {
+		return window.pageYOffset || document.documentElement.scrollTop;
+		}
+	});
+</script>
+<script>
+	$(".menu > a").click(function() {
+		$(this).toggleClass('active').next('div').slideToggle(200);
+		$(this).parent().siblings().children('div').slideUp(200);
+		$(this).parent().siblings().children('.active').removeClass('active');
+		return false;
+	});
+</script>
+<script type="text/javascript">
+
+var prevScrollTop = 0;
+
+var nowScrollTop = 0;
+
+function wheelDelta(){
+    return prevScrollTop - nowScrollTop > 0 ? 'up' : 'down';
+};
+
+$(window).on('scroll', function(){
+nowScrollTop = $(this).scrollTop();
+if(wheelDelta() == 'down'){
+	$('.quick').addClass('roll');
+}
+if(wheelDelta() == 'up'){
+	$('.quick').removeClass('roll');
+}
+prevScrollTop = nowScrollTop;
+});
+
+</script>
+<script type="text/javascript">
+$(function() {
+      $('#textarea').keyup(function (e){
+          var content = $(this).val();
+          $(this).height(((content.split('\n').length + 1) * 1.5) + 'em');
+          $('#counter').html(content.length + '<span>/5000</span>');
+      });
+      $('#textarea').keyup();
+});
+</script>
+{% endblock js %}
