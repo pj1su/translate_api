@@ -1,0 +1,175 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+<style>
+	#header{background:#222;}
+</style>
+
+<body>
+
+<!-- 스킵 네비게이션 -->
+<div class="skip_nav">
+	<a href="#">'#' 바로가기</a>
+	<a href="#">'#' 바로가기</a>
+	<a href="#">'#' 바로가기</a>
+</div>
+<!-- 스킵 네비게이션 -->
+
+<!-- 구분선 -->
+<hr class="skip">
+<!-- 구분선 -->
+
+<!-- WRAP -->
+<div id="wrap">
+
+	<!-- HEADER -->
+	<header id="header">
+		
+		<div class="header_wrap">
+
+			<!-- 로고 -->
+			<h1 class="logo">
+				<a href="{% url 'translate:home' %}">경이로움 (로고 및 홈으로 이동)</a>
+			</h1>
+			<!-- 로고 -->
+
+		</div>
+		
+	</header>
+	<!-- HEADER -->
+	
+	<!-- 구분선 -->
+	<hr class="skip">
+	<!-- 구분선 -->
+
+	<!-- MAIN -->
+	<main role="main" id="container">
+		<h2 class="skip">본문내용</h2>
+		<section class="content login">
+			
+
+			<section id="login_box">
+				<h3>로그인</h3>
+				<form method="POST" enctype="multipart/form-data">
+					<div class="form mt30">
+						<input type="text" name="" id="login_id" required="" class="ty01" maxlength="" placeholder="아이디">
+					</div>
+					<div class="form mt10">
+						<input type="password" name="" id="login_pw" required="" class="ty01" maxlength="" placeholder="비밀번호">
+					</div>
+					<div class="ment mt10">아이디/비밀번호가 일치하지 않습니다.</div>
+					<div class="form mt40 float">
+						<div class="fl">
+							<input type="checkbox" id="termsAgree" name="" class="" value="">
+							<label for="termsAgree">자동 로그인</label>
+						</div>
+						<div class="fr">
+							<a href="#" class="find">아이디/비밀번호 찾기</a>
+						</div>
+					</div>
+					<div class="form mt20">
+						<a href="{% url 'translate:translate' %}" class="btn_submit">로그인</a>
+						{% comment %} <button type="submit" class="btn_submit">로그인</button> {% endcomment %}
+						<a href="#" class="join_link mt10">회원가입</a>
+					</div>
+				</form>
+			</section>
+
+
+		</section>
+	</main>
+	<!-- MAIN -->
+	
+	<!-- 구분선 -->
+	<hr class="skip">
+	<!-- 구분선 -->
+	
+	<!-- FOOTER -->
+	<footer id="footer">
+		<div class="f_wrap float">
+			
+			<div class="f_logo">
+				<a href="/">경이로움</a>
+			</div>
+
+
+			<div class="info float">
+				<div class="fl">
+					<div class="div01">(주) 사이다경제 Co., Ltd.</div>
+					<div class="div02"><span>대표번호 02-2088-5754</span><span>운영시간 11-19시</span></div>
+				</div>
+				<div class="fr">
+					<div class="div01"><span>대표 김의현</span><span>개인정보책임 김의현</span></div>
+					<div class="div02"><span>사업자등록번호 586-81-00920</span><span>통신판매업 제2018-서울강남-03824호</span></div>
+				</div>
+			</div>
+			<div class="f_menu">
+				<ul>
+					<li><a href="#">이용약관</a></li>
+					<li><a href="#">개인정보처리방침</a></li>
+				</ul>
+			</div>
+			<div class="copy">
+				2022 사이다경제 CO., LTD ALL Rights Reserved.
+			</div>
+		</div>
+	</footer>
+	<!-- FOOTER -->
+
+</div>
+<!-- WRAP -->
+{% endblock content %}
+{% block js %}
+
+<script src="{% static 'assets/js/jquery-1.11.0.min.js' %}"></script>
+<script type="text/javascript">
+	$(function(){
+	 var rollHeader = 100;
+	  $(window).scroll(function() {
+		var scroll = getCurrentScroll();
+		  if ( scroll >= rollHeader ) {
+			   $('#header').addClass('roll');
+			}
+			else {
+				$('#header').removeClass('roll');
+			}
+	  });
+	function getCurrentScroll() {
+		return window.pageYOffset || document.documentElement.scrollTop;
+		}
+	});
+</script>
+<script>
+	$(".menu > a").click(function() {
+		$(this).toggleClass('active').next('div').slideToggle(200);
+		$(this).parent('.menu').toggleClass('active02');
+		$(this).parent().siblings().children('div').slideUp(200);
+		$(this).parent().siblings().children('.active').removeClass('active');
+		$(this).parent('.active02').siblings().removeClass('active02');
+		return false;
+	});
+</script>
+<script type="text/javascript">
+
+var prevScrollTop = 0;
+
+var nowScrollTop = 0;
+
+function wheelDelta(){
+    return prevScrollTop - nowScrollTop > 0 ? 'up' : 'down';
+};
+
+$(window).on('scroll', function(){
+nowScrollTop = $(this).scrollTop();
+if(wheelDelta() == 'down'){
+	$('.quick').addClass('roll');
+}
+if(wheelDelta() == 'up'){
+	$('.quick').removeClass('roll');
+}
+prevScrollTop = nowScrollTop;
+});
+
+</script>
+{% endblock js %}

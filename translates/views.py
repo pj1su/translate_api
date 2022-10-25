@@ -12,6 +12,10 @@ class TranslateAPIView(TemplateView):
     
     template_name = "translation.html"
     
+class LoginView(TemplateView):
+    
+    template_name = "login.html"
+    
 @csrf_exempt
 def trans(request):
     try:

@@ -51,7 +51,7 @@
 						<div>
 							세상의 모든 책을 연결합니다. </br>책 만을 위한, <span>AI 기계번역</span> 솔루션입니다.
 						</div>
-						<a href="{% url 'translate:translate' %}">지금 무료 체험하기</a>
+						<a href="{% url 'translate:login' %}">지금 무료 체험하기</a>
 					</div>
 				</div>
 			</section>
@@ -63,7 +63,7 @@
 					<div class="img">
 						<img src="{% static 'assets/img/s02_01.svg' %}">
 					</div>
-					<a href="{% url 'translate:translate' %}">지금 무료 체험하기</a>
+					<a href="{% url 'translate:login' %}">지금 무료 체험하기</a>
 				</div>
 			</section>
 			<section id="section03" class="section">
@@ -74,7 +74,7 @@
 					<div class="img">
 						<img src="{% static 'assets/img/s03_01.svg' %}">
 					</div>
-					<a href="{% url 'translate:translate' %}">지금 무료 체험하기</a>
+					<a href="{% url 'translate:login' %}">지금 무료 체험하기</a>
 				</div>
 			</section>
 			<section id="section04" class="section">
@@ -93,7 +93,7 @@
 						지금 바로 번역 솔루션을 </br>가장 먼저 체험할 기회
 						<small>1회 한정 무료체험 가능</small>
 					</div>
-					<a href="{% url 'translate:translate' %}">지금 무료 체험하기</a>
+					<a href="{% url 'translate:login' %}">지금 무료 체험하기</a>
 				</div>
 			</section>
 			<section id="section06">
@@ -103,57 +103,39 @@
 					</div>
 					<ul>
 						<li>
-							<div class="subject">시간이 엄청 절약되요!! 너무 좋아요</div>
+							<div class="subject">시간이 엄청 절약돼요!! 너무 좋아요</div>
 							<div class="etc">
 								<span>양**</span><span><img src="{% static 'assets/img/s06_01.svg' %}"></span>
 							</div>
 							<div class="content">
-								솔직히 진짜 빨리 될까 싶었는데 진짜 엄청 빠르더라구요! 시간이 절약되니까 양도 늘릴 수 있고 너무 좋아요~
+								솔직히 진짜 빨리 될까 싶었는데 진짜 엄청 빠르더라구요!  시간이 절약되니까 양도 늘릴 수 있고 너무 좋아요.
 							</div>
 						</li>
 						<li>
-							<div class="subject">시간이 엄청 절약되요!! 너무 좋아요</div>
+							<div class="subject">번역에 어울리는 깔끔한 문체입니다.</div>
 							<div class="etc">
-								<span>양**</span><span><img src="{% static 'assets/img/s06_01.svg' %}"></span>
+								<span>김**</span><span><img src="{% static 'assets/img/s06_01.svg' %}"></span>
 							</div>
 							<div class="content">
-								솔직히 진짜 빨리 될까 싶었는데 진짜 엄청 빠르더라구요! 시간이 절약되니까 양도 늘릴 수 있고 너무 좋아요~
+								다른 번역 프로그램에 비해 어투가 자연스럽고 깔끔해 원서 번역에 많은 도움을 받았습니다.
 							</div>
 						</li>
 						<li>
-							<div class="subject">시간이 엄청 절약되요!! 너무 좋아요</div>
+							<div class="subject">비용 절감이 기대됩니다! ^^</div>
 							<div class="etc">
-								<span>양**</span><span><img src="{% static 'assets/img/s06_01.svg' %}"></span>
+								<span>안**</span><span><img src="{% static 'assets/img/s06_01.svg' %}"></span>
 							</div>
 							<div class="content">
-								솔직히 진짜 빨리 될까 싶었는데 진짜 엄청 빠르더라구요! 시간이 절약되니까 양도 늘릴 수 있고 너무 좋아요~
+								경이로움 AI  기계번역을 통해 초안 번역을 완료하고,  검수를 의뢰하는 형식으로 비용 절감이 기대됩니다! ^^
 							</div>
 						</li>
 						<li>
-							<div class="subject">시간이 엄청 절약되요!! 너무 좋아요</div>
+							<div class="subject">번역 원서를 선정하는데 도움이 돼요~~!</div>
 							<div class="etc">
-								<span>양**</span><span><img src="{% static 'assets/img/s06_01.svg' %}"></span>
+								<span>정**</span><span><img src="{% static 'assets/img/s06_01.svg' %}"></span>
 							</div>
 							<div class="content">
-								솔직히 진짜 빨리 될까 싶었는데 진짜 엄청 빠르더라구요! 시간이 절약되니까 양도 늘릴 수 있고 너무 좋아요~
-							</div>
-						</li>
-						<li>
-							<div class="subject">시간이 엄청 절약되요!! 너무 좋아요</div>
-							<div class="etc">
-								<span>양**</span><span><img src="{% static 'assets/img/s06_01.svg' %}"></span>
-							</div>
-							<div class="content">
-								솔직히 진짜 빨리 될까 싶었는데 진짜 엄청 빠르더라구요! 시간이 절약되니까 양도 늘릴 수 있고 너무 좋아요~
-							</div>
-						</li>
-						<li>
-							<div class="subject">시간이 엄청 절약되요!! 너무 좋아요</div>
-							<div class="etc">
-								<span>양**</span><span><img src="{% static 'assets/img/s06_01.svg' %}"></span>
-							</div>
-							<div class="content">
-								솔직히 진짜 빨리 될까 싶었는데 진짜 엄청 빠르더라구요! 시간이 절약되니까 양도 늘릴 수 있고 너무 좋아요~
+								모든 원서를 번역해보고 국내로 도입하기에 부담이 컸는데 무료 체험으로 질 좋은 번역을 체험해볼 수 있어서...
 							</div>
 						</li>
 					</ul>
@@ -169,34 +151,37 @@
 					<ul>
 						<li class="menu">
 							<a>
-								<div class="q">AI 기계번역이 정확히 뭔가요?</div>
+								<div class="q">다른 번역 프로그램과 차이가 있나요?</div>
 							</a>
 							<div style="">
-								사이다경제 홈페이지에서 시그널 메뉴를 선택하신 후....
+								경이로움 AI  기계번역 솔루션은 모든 데이터를 활용하여 번역하는 타 플랫폼과 달리 책의 데이터와 문장 ,  문맥 등만을 활용하여 
+								딥러닝 된 ‘책 번역 최적화’ 솔루션입니다.
 							</div>
 						</li>
 						<li class="menu">
 							<a>
-								<div class="q">AI 기계번역이 정확히 뭔가요?</div>
+								<div class="q">무료 체험은 어떻게 할 수 있나요?</div>
 							</a>
 							<div style="">
-								사이다경제 홈페이지에서 시그널 메뉴를 선택하신 후....
+								베타테스트 기간에는 누구나 자유롭게 체험이 가능합니다.  실제 서비스 오픈 후에는 회원가입 및 로그인을 통해 5,000 byte 
+								이내에서 체험이 가능합니다.  한 층 업그레이드 된 번역 솔루션의 결과물을 지금 바로 만나보세요.
 							</div>
 						</li>
 						<li class="menu">
 							<a>
-								<div class="q">AI 기계번역이 정확히 뭔가요?</div>
+								<div class="q">원서를 옮겨 적는 불편함 없이 스캔은 불가할까요?</div>
 							</a>
 							<div style="">
-								사이다경제 홈페이지에서 시그널 메뉴를 선택하신 후....
+								경이로움 AI  기계번역 솔루션은 향후 1 회 당 번역량 확대,  스캔본 텍스트화,  번역 감수 전문가 연결 서비스 등 고객의 번역 편의를 
+								위한 추가 시스템을 지속적으로 구축해나갈 계획입니다.
 							</div>
 						</li>
 						<li class="menu">
 							<a>
-								<div class="q">AI 기계번역이 정확히 뭔가요?</div>
+								<div class="q">제휴 문의</div>
 							</a>
 							<div style="">
-								사이다경제 홈페이지에서 시그널 메뉴를 선택하신 후....
+								좋은 의견이 있으시다면 언제든지 (주)사이다경제(02-2088-5754, contact@cidermics.com) 로 연락주십시오.
 							</div>
 						</li>
 					</ul>
@@ -216,7 +201,7 @@
 		<div class="f_wrap float">
 
 			<div class="quick">
-				<a href="{% url 'translate:translate' %}">지금 무료 체험하기</a>
+				<a href="{% url 'translate:login' %}">지금 무료 체험하기</a>
 			</div>
 			
 			<div class="f_logo">
